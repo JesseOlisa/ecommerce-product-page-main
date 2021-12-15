@@ -3,42 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700&family=Kumbh+Sans:wght@200;400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+  
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | E-commerce product page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
+-->
 </head>
 <body>
+  <div class="container">
+    <section class="nav-bar">
+      <img src="./images/logo.svg" alt="sneakers logo">
+      <ul>
+        <li>Collections</li> 
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+      <div class="cart-profile">
+        <img src="./images/icon-cart.svg" alt="cart" class="cart-pics">
+        <img src="./images/image-avatar.png" alt="profile picture" class="profile-picture">
+      </div>
+      <div class="cart">
+        <h4>Cart</h4>
+        <hr>
+        <p>Your Cart is empty.</p>
+      </div>
+    </section>
+    <hr>
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    <section class="main-content">
+      <div class="left-section">
+        <img src="./images/image-product-1.jpg" alt="product-1" class="main-product-image">
+      
+        <div class="thumbnail-container">
+          <div>
+            <img src="./images/image-product-1-thumbnail.jpg" alt="thumbnail-1" class="active">
+          </div>
+          <div>
+            <img src="./images/image-product-2-thumbnail.jpg" alt="thumbnail-2">
+          </div>
+          <div>
+            <img src="./images/image-product-3-thumbnail.jpg" alt="thumbnail-3">
+          </div>
+          <div>
+            <img src="./images/image-product-4-thumbnail.jpg" alt="thumbnail-4">
+          </div>
+        </div>
+      </div>
+      <div class="right-section">
+        <h4>Sneaker Company</h4>
+      
+        <h1>Fall Limited Edition Sneakers</h1>
+      
+        <p class="subtitle">These low-profile sneakers are your perfect casual wear companion. Featuring a 
+        durable rubber outer sole, they will withstand everything the weather can offer.</p> 
+        <div class="price-tag">
+        <h3>$125.00</h3> 
+        <p class="price-off">50%</p>
+        <p class="old-price">$250.00</p>
+        </div>
+        <div class="add-to-cart-container">
+          <div class="item-number">
+            <i class="fas fa-minus"></i>
+            <p>0</p>
+            <i class="fas fa-plus"></i>
 
-  Sneaker Company
+          </div>
+          <div>
+           <input type="button" value="Add to cart" class="add-to-cart-btn"> 
+          </div>
+        </div>
+      </div>
 
-  Fall Limited Edition Sneakers
+    </section>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
-
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    
+    
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div>
   </div>
+ 
 </body>
 </html>
