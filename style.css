@@ -140,12 +140,12 @@ main  {
     width: 100%;
     min-height: 15rem;
 }
-.main-image-container {
+.main-image-container, .modal-image-container {
     position: relative;
     width: 100%;
     aspect-ratio: 1.35;
 }
-.main-image-container  img {
+.main-image-container  img, .modal-image-container img {
     position: absolute;
     top: 0;
     left: 0;
@@ -154,10 +154,11 @@ main  {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-.main-image-container img[data-current-image] {
-    opacity: 1;
     pointer-events: none;
+}
+
+.main-image-container img[data-current-image], .modal-image-container img[data-current-image] {
+    opacity: 1;
 }
 .carousel-container {
     position: absolute;
@@ -189,7 +190,7 @@ main  {
 .right-btn {
     right: 1rem;
 }
-.thumbnail-image-container {
+.thumbnail-image-container, .modal-thumbnail-image-container {
     display: none;
 }
 
@@ -354,27 +355,34 @@ MEDIA QUERY
     .container {
         margin-top: 4rem;
     }
-    .product-image-container {
+    .product-image-container, .modal-product-image-container {
         width: 80%;
         min-width: 30rem;
         padding-inline: 6rem;
     }
-    .main-image-container {
+    .modal-product-image-container {
+        width: 100% !important;
+    }
+    .main-image-container, .modal-image-container {
         position: relative;
         max-width: 100%;
         aspect-ratio: 1;
     }
-    .main-image-container  img {
+    .main-image-container  img, .modal-image-container img {
         border-radius: 1.2rem;
         height: auto !important;
     }
-    .carousel {
-        padding: .9rem 1.1rem;
+    .main-image-container img  {
+        cursor: pointer;
     }
-    .left-btn {
+    .carousel {
+        font-size: 1.8rem;
+        padding: .9rem 1.2rem;
+    }
+    .prev-btn {
         left: -1.5rem;
     }
-    .right-btn {
+    .next-btn {
         right: -1.5rem;
     }
 
@@ -494,20 +502,20 @@ MEDIA QUERY
         flex-direction: row;
         margin-top: 4rem;
     }
-    .product-image-container {
+    .-image-container {
         width: 100%;
         padding-inline: 6rem;
     }
     .main-image-container img[data-current-image] {
         pointer-events: auto;
     }
-    .thumbnail-image-container {
+    .thumbnail-image-container, .modal-thumbnail-image-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding-block: 1.5rem;
         gap: 1.6rem;
     }
-    .thumbnail-image-container img {
+    .thumbnail-image-container img, .modal-thumbnail-image-container img {
         border-radius: 1rem;
         transition: all 0.3s ease;
     }
@@ -516,7 +524,7 @@ MEDIA QUERY
         opacity: .5;
         cursor: pointer;
     }
-    .thumbnail-image-container .active {
+    .thumbnail-image-container .active, .modal-thumbnail-image-container .active {
         border: 3px solid hsl(26, 100%, 55%);
         border-radius: 1rem;
         background-color: hsl(0, 0%, 100%);
@@ -549,10 +557,12 @@ MEDIA QUERY
         height: 100vh;
         top: 0;
         left: 0;
-        background-color: hsla(0, 0%, 0%, .5);
+        background-color: hsla(0, 0%, 0%, .8);
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
     .modal-container {
-        max-width: 50%;
+        max-width: 39rem;
         height: 100%;
         margin-inline: auto;
         display: flex;
@@ -563,19 +573,19 @@ MEDIA QUERY
     .modal-container .carousel-container {
         display: flex;
     }
-    .modal-container .thumbnail-image-container {
+    .modal-container {
         width: 85%;
         margin-inline: auto;
     }
     .close-btn {
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: right;
         cursor: pointer;
         color: hsl(0, 0%, 100%);
         transition: color 0.3s ease;
         align-self: flex-end;
         position: relative;
-        right: 15%;
+        right: 16.5%;
         margin-bottom: .8rem;
     }
     .close-btn:hover {

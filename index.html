@@ -9,6 +9,9 @@
   
   <script src="https://kit.fontawesome.com/fb151ec1c7.js" crossorigin="anonymous"></script>
   <script src="./nav.js" defer></script>
+  <script src="./index.js" defer></script>
+  <script src="./index.js" defer></script>
+
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -52,11 +55,11 @@
                     <img src="./images/image-product-3.jpg" alt="Product Image" class="product-image">
                     <img src="./images/image-product-4.jpg" alt="Product Image" class="product-image">
                     <div class="carousel-container">
-                        <i class="fa-solid fa-angle-left carousel left-btn"></i>
-                        <i class="fa-solid fa-angle-right carousel right-btn"></i>
+                        <i class="fa-solid fa-angle-left carousel prev-btn"></i>
+                        <i class="fa-solid fa-angle-right carousel next-btn"></i>
                     </div>
                 </div>
-                <div class="thumbnail-image-container grid">
+                <div class="thumbnail-image-container grid" id="main-thumbnail">
                     <div class="thumbanil-image active" >
                         <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail" class="thumbnail-image" >
                     </div>
@@ -84,9 +87,9 @@
                 </div>
                 <div class="buy-container flex">
                     <div class="quantity-container flex">
-                        <img src="./images/icon-minus.svg" alt="minus" class="counter">  
+                        <img src="./images/icon-minus.svg" alt="minus" class="counter" id="decrement">  
                         <p class="quantity">0</p>
-                        <img src="./images/icon-plus.svg" alt="plus" class="counter">                              
+                        <img src="./images/icon-plus.svg" alt="plus" class="counter" id="increment">                              
                     </div>
                     <button class="btn btn-to-cart"><img src="./images/icon-cart-white.svg" alt="icon"> Add to cart</button>
                 </div>
@@ -99,18 +102,18 @@
     <div class="modal">
         <div class="modal-container">
             <i class="fa-solid fa-xmark close-btn"></i>
-            <div class="product-image-container">
-                <div class="main-image-container">
-                    <img src="./images/image-product-1.jpg" alt="Product Image" class="product-image" data-current-image="true">
-                    <img src="./images/image-product-2.jpg" alt="Product Image" class="product-image">
-                    <img src="./images/image-product-3.jpg" alt="Product Image" class="product-image">
-                    <img src="./images/image-product-4.jpg" alt="Product Image" class="product-image">
+            <div class="modal-product-image-container">
+                <div class="modal-image-container">
+                    <img src="./images/image-product-1.jpg" alt="Product Image" class="modal-product-image" data-current-image="true">
+                    <img src="./images/image-product-2.jpg" alt="Product Image" class="modal-product-image">
+                    <img src="./images/image-product-3.jpg" alt="Product Image" class="modal-product-image">
+                    <img src="./images/image-product-4.jpg" alt="Product Image" class="modal-product-image">
                     <div class="carousel-container">
-                        <i class="fa-solid fa-angle-left carousel left-btn"></i>
-                        <i class="fa-solid fa-angle-right carousel right-btn"></i>
+                        <i class="fa-solid fa-angle-left carousel prev-btn"></i>
+                        <i class="fa-solid fa-angle-right carousel next-btn"></i>
                     </div>
                 </div>
-                <div class="thumbnail-image-container grid">
+                <div class="thumbnail-image-container grid" id="modal-thumbnail">
                     <div class="thumbanil-image active" >
                         <img src="./images/image-product-1-thumbnail.jpg" alt="Thumbnail" class="thumbnail-image" >
                     </div>
