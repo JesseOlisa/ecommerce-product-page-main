@@ -67,9 +67,9 @@ a {
     transition: none !important ;
 }
 
-/* [hidden] {
+[hidden] {
     display: none !important;
-} */
+}
 
 /* Set core body defaults */
 body {
@@ -106,21 +106,68 @@ header {
 }
 .hamburger {
     margin-right: 1rem;
+    display: none;
 }
 .logo {
     padding-bottom: .2rem;
 }
+
 .nav-links-container {
-    display: none;
-    margin-block: 0;
+    display: block;
+    margin: 0;
+    padding-left: .5rem;
+}
+.nav-links-container li {
+    padding: 1rem 0 1.4rem;
+    margin-right: .5rem;
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    font-size: .8rem;
+}
+.nav-links-container li:hover a {
+    color: hsl(220, 13%, 13%);
+    
+}
+.nav-links-container li::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+    background-color: hsl(26, 100%, 55%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.nav-links-container li:hover::before {
+    opacity: 1;
 }
 .header-section-2 {
     padding-bottom: .45rem;
     justify-content: flex-end !important;
+    position: relative;
 }
 .cart-icon {
     padding-right: 1rem;
 }
+
+.barge::after {
+    position: absolute;
+    content: attr(data-quantity);
+    width: 18px;
+    height: 12px;
+    top: 0;
+    left: 10px;
+    background-color: hsl(26, 100%, 55%);
+    border-radius: .4rem;
+    z-index: 50;
+    font-size: .5rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+
 .profile-img {
     max-width: 2rem;
 }
@@ -294,7 +341,6 @@ BTN
     display: none;
 }
 .cart-container {
-    display: none;
     position: absolute;
     width: 95%;
     top: 4.8rem;
@@ -304,6 +350,7 @@ BTN
     box-shadow: 2px 15px 18px hsla(0, 0%, 0%, .3);
     z-index: 20;
 }
+
 .cart-title {
     margin-left: 1rem;
     padding-block: 1rem 1.5rem;
@@ -315,7 +362,15 @@ BTN
     padding: 1rem;
     justify-content: space-between;
     width: 100;
-
+}
+.cart-empty {
+    border-top: 1px solid hsl(220, 14%, 75%);
+    padding-block: 4.5rem;
+    text-align: center;
+}
+.cart-empty p {
+    color: hsl(219, 9%, 45%);
+    font-weight: 700;
 }
 .cart-image {
     max-width: 3rem;
@@ -441,45 +496,25 @@ MEDIA QUERY
         right: 1rem;
     }
 
-    
 }
-
+@media screen and (min-width: 46.88rem) {
+    .nav-links-container {
+        padding-left: 3rem;
+    }
+    .nav-links-container li {
+        font-size: 1rem;
+    }
+}
 @media screen and (min-width: 62rem) {
     body {
         padding-inline: 5%;
     }
-    .hamburger {
-        display: none;
-    }
+    
     .logo {
-        padding-bottom: .85rem;
-    }
-    .nav-links-container {
-        display: block;
+        padding-bottom: .7rem;
     }
     .nav-links-container li {
-        padding: 1rem 0 2.4rem;
-        margin-right: 1rem;
-        position: relative;
-        text-align: center;
-        cursor: pointer;
-    }
-    .nav-links-container li:hover a {
-        color: hsl(220, 13%, 13%);
-    }
-    .nav-links-container li::before {
-        position: absolute;
-        content: " ";
-        width: 100%;
-        height: 4px;
-        left: 0;
-        bottom: 0;
-        background-color: hsl(26, 100%, 55%);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    .nav-links-container li:hover::before {
-        opacity: 1;
+        padding-bottom: 2rem;
     }
     .header-section-2 {
         padding-bottom: .85rem;
@@ -497,7 +532,9 @@ MEDIA QUERY
         padding-right: 2.1rem;
         cursor: pointer;
     }
-
+    .close-nav {
+        display: none;
+    }
     .container {
         flex-direction: row;
         margin-top: 4rem;
@@ -600,9 +637,15 @@ MEDIA QUERY
     body {
         padding-inline: 10%;
     }
+    .close-nav {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px) {
+    .hamburger {
+        display: block;
+    }
     .nav-container {
         display: none;
         position: absolute;
@@ -637,9 +680,14 @@ MEDIA QUERY
     .nav-links-container li {
         display: block;
         padding-block: .65rem;
+        text-align: left;
     }
     .nav-links-container li a {
         font-weight: 700;
         color: hsl(220, 13%, 13%);
+    }
+
+    main {
+        margin-bottom: 2rem;
     }
 }

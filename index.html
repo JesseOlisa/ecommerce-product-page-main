@@ -10,7 +10,7 @@
   <script src="https://kit.fontawesome.com/fb151ec1c7.js" crossorigin="anonymous"></script>
   <script src="./nav.js" defer></script>
   <script src="./index.js" defer></script>
-  <script src="./index.js" defer></script>
+  <script src="./cart.js" defer></script>
 
   <title>Frontend Mentor | E-commerce product page</title>
 
@@ -39,7 +39,7 @@
                 </ul>
             </nav>
         </div>
-        <div class="header-section-2 flex">
+        <div class="header-section-2 flex" >
             <img src="./images/icon-cart.svg" alt="cart" class="cart-icon">
             <img src="./images/image-avatar.png" alt="profile pics" class="profile-img">
         </div>
@@ -99,7 +99,8 @@
     </main>
 
     <!-- ***************LIGHTBOX *********************** -->
-    <div class="modal">
+    
+    <section class="modal">
         <div class="modal-container">
             <i class="fa-solid fa-xmark close-btn"></i>
             <div class="modal-product-image-container">
@@ -129,28 +130,34 @@
                 </div>
             </div> 
         </div>
-    </div>
+    </section>
 
     <!-- *********************CART**************** -->
-    <div class="cart-container">
+    <section class="cart-container" id="cart-hide" hidden>
         <p class="cart-title">Cart</p>
-        <div class="cart-content flex">
-            <div class="flex">
-                <img src="./images/image-product-1-thumbnail.jpg" alt="cart" class="cart-image">
-                <div class="cart-product-container">
-                    <p>Fall Edition Limited Sneaker</p>
-                    <div class="flex total-price">
-                        <p>$125 x <span class="quantity">6</span></p>
-                        <p class="total">#500</p>
+        <div class="cart-full" hidden>
+            <div class="cart-content flex">
+                <div class="flex">
+                    <img src="./images/image-product-1-thumbnail.jpg" alt="cart" class="cart-image">
+                    <div class="cart-product-container">
+                        <p>Fall Edition Limited Sneaker</p>
+                        <div class="flex total-price">
+                            <p class="price-cart">$125 x <span class="cart-quantity"></span></p>
+                            <p class="total">#500</p>
+                        </div>
                     </div>
                 </div>
+                <img src="./images/icon-delete.svg" alt="delete" class="delete-cart">
             </div>
-            <img src="./images/icon-delete.svg" alt="delete" class="delete-btn">
+            <div class="cart-btn-container">
+                <button class="btn btn-to-cart cart-checkout">Checkout</button>
+            </div>
         </div>
-        <div class="cart-btn-container">
-            <button class="btn btn-to-cart cart-checkout">Checkout</button>
+        <div class="cart-empty">
+            <p>Your Cart is empty</p>
         </div>
-    </div>
+        
+    </section>
   
   
   <!-- <div class="attribution">
