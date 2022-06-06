@@ -66,10 +66,12 @@ carouselBtns.forEach((btn)=>{
 
 
 thumbnailContainers.forEach((container) => {
-    container.addEventListener('click', ((e)=>{
+    container.addEventListener('click', ((e)=> {
+        if(e.target.parentElement.classList.contains('active')) {
+            return;
+        }
         let targetThumbnail = e.target.closest('img');
         if(!targetThumbnail) return;
-        
         const mainImageContainer = document.querySelector('.main-image-container');
         let thumbImageIndex = mainThumbnailImages.findIndex(thumbail => thumbail === targetThumbnail)
         // FOR MODAL
@@ -132,6 +134,7 @@ let updateThumbnail = (thumbnailContainer, indexNum, thumbnailImages) => {
 
 //OPEN AND CLOSE MODAL
 const modal = document.querySelector('.modal');
+const modalContainer = document.querySelector('.modal-container');
 const closeModal = document.querySelector('.close-btn');
 
 mainProductImages.forEach((productimage) => {
@@ -142,7 +145,7 @@ mainProductImages.forEach((productimage) => {
         }
         const openModal = setTimeout(toOpenModal, 50);
     })
-})
+});
 
 closeModal.addEventListener('click', () => {
     modal.style.opacity = "0";
@@ -151,4 +154,15 @@ closeModal.addEventListener('click', () => {
         modal.style.display = "none";
     }
     const openModal = setTimeout(toCloseModal, 200);
-})
+});
+
+window.addEventListener('click', (e) => {
+     const modalImageContainerMk = document.querySelector('.modal-image-container');
+
+    if(e.target === modal || e.target === modalImageContainerMk.parentElement) {
+        const toCloseModal = () => {
+            modal.style.display = "none";
+        }
+        const openModal = setTimeout(toCloseModal, 200);
+    }
+});
